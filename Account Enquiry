@@ -1,4 +1,4 @@
-Account Bank::Withdraw(long accountNumber,float amount)
+Account Bank::Withdraw(long accountNumber,float amount) //Account related activities
 {
 map<long,Account>::iterator itr=accounts.find(accountNumber);
 itr->second.Withdraw(amount);
