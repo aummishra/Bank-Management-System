@@ -1,0 +1,20 @@
+Account Bank::Withdraw(long accountNumber,float amount)
+{
+map<long,Account>::iterator itr=accounts.find(accountNumber);
+itr->second.Withdraw(amount);
+return itr->second;
+}
+void Bank::CloseAccount(long accountNumber)
+{
+map<long,Account>::iterator itr=accounts.find(accountNumber);
+cout<<"Account Deleted"<<itr->second;
+accounts.erase(accountNumber);
+}
+void Bank::ShowAllAccounts()
+{
+map<long,Account>::iterator itr;
+for(itr=accounts.begin();itr!=accounts.end();itr++)
+{
+cout<<"Account "<<itr->first<<endl<<itr->second<<endl;
+}
+}
